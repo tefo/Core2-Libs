@@ -1,7 +1,7 @@
 function adjustTableHeaderWidth() {
 	//$("#table1").width(parseInt($("#table1_data").width()));
 
-	$_("table1").style.width = "auto";
+	//$_("table1").style.width = "auto";
 
 	var filter_columns_count = 0;
 	if ($_("filter_table1")) {
@@ -30,8 +30,8 @@ function adjustTableHeaderWidth() {
 				$_("filter_table1").rows[0].cells[filter_columns_count-1].style.width = last_filter_column_width+"px";
 			}
 
-			$_("table1").style.width = "auto";
-			$_("filter_table1").style.width = "auto";
+			$_("table1").style.width = table1_data_width+"px";
+			$_("filter_table1").style.width = table1_data_width+"px";
 		}
 		else {
 			alert("header columns != data columns");
