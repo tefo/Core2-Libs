@@ -38,22 +38,21 @@ function adjustTableHeaderWidth() {
 		}
 	}
 	else {
-		$_("table1").style.width = "auto";
-		$_("filter_table1").style.width = "auto";
-		/*
+		$_("table1").style.width = "100%";
+
 		if (filter_columns_count) {
 			for (i = 0; i < columns_count; i++) {
 				if (i < filter_columns_count) {
-					var filter_cell = $_("filter_table1").rows[0].cells[i];
-					var filter_column_width = filter_cell.clientWidth;
+					var table1_cell = $_("table1").rows[0].cells[i];
+					var table1_column_width = table1_cell.clientWidth;
 
-					$_("table1").rows[0].cells[i].style.width = filter_column_width+"px";
+					$_("filter_table1").rows[0].cells[i].style.width = table1_column_width+"px";
 				}
 				else {
 					$_("table1").rows[0].cells[i].style.display = "none";
 				}
 			}
-		}*/
+		}
 	}
 
 	$("#table1_div").height(jQuery(window).height()-table1_var1);
