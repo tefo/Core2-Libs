@@ -11,13 +11,12 @@ function adjustTableHeaderWidth() {
 	var columns_count = $_("table1").rows[0].cells.length;
 	if ($_("table1_data").rows[0]) {
 		if (columns_count == $_("table1_data").rows[0].cells.length) {
+
 			var last_filter_column_width = 0;
-			var table1_data_width = 0;
 			for (i = 0; i < columns_count; i++) {
 				var data_cell = $_("table1_data").rows[0].cells[i];
 				var data_column_width = data_cell.clientWidth;
 
-				table1_data_width += data_column_width;
 				$_("table1").rows[0].cells[i].style.width = data_column_width+"px";
 				if (i < filter_columns_count-1) {
 					$_("filter_table1").rows[0].cells[i].style.width = data_column_width+"px";
@@ -26,12 +25,13 @@ function adjustTableHeaderWidth() {
 					last_filter_column_width += data_column_width;
 				}
 			}
+
 			if (filter_columns_count) {
 				$_("filter_table1").rows[0].cells[filter_columns_count-1].style.width = last_filter_column_width+"px";
 			}
 
 			$_("table1").style.width = $_("table1_data").clientWidth+"px";
-			$_("filter_table1").style.width = $_("table1_data").style.width;
+			$_("filter_table1").style.width = $_("table1_data").clientWidth+"px";
 		}
 		else {
 			alert("header columns != data columns");
