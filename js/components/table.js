@@ -38,6 +38,9 @@ function adjustTableHeaderWidth() {
 		}
 	}
 	else {
+		$_("table1").style.width = "auto";
+		$_("filter_table1").style.width = "auto";
+		/*
 		if (filter_columns_count) {
 			for (i = 0; i < columns_count; i++) {
 				if (i < filter_columns_count) {
@@ -50,7 +53,7 @@ function adjustTableHeaderWidth() {
 					$_("table1").rows[0].cells[i].style.display = "none";
 				}
 			}
-		}
+		}*/
 	}
 
 	$("#table1_div").height(jQuery(window).height()-table1_var1);
