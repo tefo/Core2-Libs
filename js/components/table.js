@@ -41,14 +41,21 @@ function adjustTableHeaderWidth() {
 		$_("table1").style.width = "100%";
 
 		if (filter_columns_count) {
-			for (i = 0; i < columns_count; i++) {
-				if (i < filter_columns_count) {
-					var table1_cell = $_("table1").rows[0].cells[i];
-					var table1_column_width = table1_cell.clientWidth;
 
+			var last_filter_column_width = 0;
+			for (i = 0; i < columns_count; i++) {
+				var table1_cell = $_("table1").rows[0].cells[i];
+				var table1_column_width = table1_cell.clientWidth;
+
+				if (i < filter_columns_count-1) {
 					$_("filter_table1").rows[0].cells[i].style.width = table1_column_width+"px";
 				}
+				else {
+					last_filter_column_width += table1_column_width;
+				}
 			}
+
+			$_("filter_table1").rows[0].cells[filter_columns_count-1].style.width = last_filter_column_width+"px";
 		}
 	}
 
