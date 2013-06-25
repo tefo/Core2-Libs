@@ -48,9 +48,6 @@ function adjustTableHeaderWidth() {
 
 					$_("filter_table1").rows[0].cells[i].style.width = table1_column_width+"px";
 				}
-				else {
-					$_("table1").rows[0].cells[i].style.display = "none";
-				}
 			}
 		}
 	}
